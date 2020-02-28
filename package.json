@@ -1,0 +1,35 @@
+{
+  "name": "set-iptc-pmd-searchengines",
+  "version": "0.1.0",
+  "description": "App for editing IPTC Photo Metadata fields which are highly relevant for search engines",
+  "keyords": [
+    "IPTC",
+    "metadata",
+    "photo"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Michael Steidl",
+    "email": "mwsteidl@newsit.biz",
+    "url": "https://newsit.biz"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nitmws/set-iptc-pmd-searchengines.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nitmws/set-iptc-pmd-searchengines/issues"
+  },
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.17.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "^2.0.4"
+  }
+}

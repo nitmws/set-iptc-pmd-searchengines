@@ -102,3 +102,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+# NIT project specific
+.idea
+_internal-doc
+*.bak
+*_pre*.*
+nittest*.html
+auxdata
