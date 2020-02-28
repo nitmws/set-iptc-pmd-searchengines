@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h3.mt-3 Result after generating IPTC Photo Metadata
+  p #{message}
+  h5 The generated ExifTool JSON object for embedding metadata into an image file
+  pre
+    code #{etObjStr}
+
+  h5 The generated Structured HTML Metadata for embedding into a web page
+  pre
+    code &lt;script type="application/ld+json"&gt;
+    br
+    code #{schemaorgObjStr}
+    br
+    code &lt;/script&gt;
+  hr
+  a.btn.btn-primary.btn-lg.active(href='/' role='button' aria-pressed='true') Back to start

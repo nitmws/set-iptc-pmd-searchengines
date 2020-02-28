@@ -1,0 +1,69 @@
+extends layout
+
+block content
+  form(id="amdform1" class="mt-2" method='POST' action="/data/gensedata" onsubmit='return startSpinner1("#gensedatabtn");')
+    p Some introduction to what needs to be done
+    div.mt-2.mb-2.pt-1.pb-1.pl-1.pr-1.formbox02
+      div.form-row
+        div.form-group.col-md-5
+          label(for='creator1name') <strong>Creator</strong>: Name (shown by Google)
+          input.form-control(id='creator1name' type='text' name='creatorName' value=(undefined === pmdObj.creatorName ? '' : pmdObj.creatorName))
+        div.form-group.col-md-3
+          label(for='creator1jobtitle') Job Title
+          input.form-control(id='creator1jobtitle' type='text' name='creatorJobtitle' value=(undefined === pmdObj.creatorJobtitle ? '' : pmdObj.creatorJobtitle))
+        div.form-group.col-md-4
+          label(for='creator1id') Identifier
+          input.form-control(id='creator1id' type='text' name='creatorId' value=(undefined === pmdObj.creatorId ? '' : pmdObj.creatorId))
+      button.btn.btn-link.mb-1(type="button" data-toggle="collapse" data-target="#creatorDetails" aria-expanded="false" aria-controls="creatorDetails") Creator Details
+      div#creatorDetails.collapse
+        div.card.card-body.formbox02
+          div.form-row
+            div.form-group.col-md-5
+              label(for='creatorAddr') Address
+              input.form-control.form-control-sm(id='creatorAddr' type='text' name='creatorAddr' value=(undefined === pmdObj.creatorAddress ? '' : pmdObj.creatorAddress))
+            div.form-group.col-md-4
+              label(for='creatorCity') City
+              input.form-control.form-control-sm(id='creatorCity' type='text' name='creatorCity' value=(undefined === pmdObj.creatorCity ? '' : pmdObj.creatorCity))
+            div.form-group.col-md-3
+              label(for='creatorPostalcode') Postal Code
+              input.form-control.form-control-sm(id='creatorPostalcode' type='text' name='creatorPostalcode' value=(undefined === pmdObj.creatorPostalcode ? '' : pmdObj.creatorPostalcode) )
+          div.form-row
+            div.form-group.col-md-3
+              label(for='creatorStateProvince') State/Province
+              input.form-control.form-control-sm(id='creatorStateProvince' type='text' name='creatorStateProvince' value=(undefined === pmdObj.creatorStateProvince ? '' : pmdObj.creatorStateProvince) )
+            div.form-group.col-md-3
+              label(for='creatorCountry') Country
+              input.form-control.form-control-sm(id='creatorCountry' type='text' name='creatorCountry' value=(undefined === pmdObj.creatorCountry ? '' : pmdObj.creatorCountry) )
+            div.form-group.col-md-3
+              label(for='creatorEmail') Email Address
+              input.form-control.form-control-sm(id='creatorEmail' type='text' name='creatorEmail' value=(undefined === pmdObj.creatorEmail ? '' : pmdObj.creatorEmail) )
+            div.form-group.col-md-3
+              label(for='creatorUrl') Web URL
+              input.form-control.form-control-sm(id='creatorUrl' type='text' name='creatorUrl' value=(undefined === pmdObj.creatorUrl ? '' : pmdObj.creatorUrl) )
+              small.form-text.text-muted The URL must start with https:// or http://
+    div.form-group
+      label(for='copyrightnotice') <strong>Copyright Notice</strong> (shown by Google)
+      input.form-control(id='copyrightnotice' type='text' name='copyrightNotice' value=(undefined === pmdObj.copyrightNotice ? '' : pmdObj.copyrightNotice) )
+    div.form-row
+      div.form-group.col-md-5
+        label(for='credit') <strong>Credit Line</strong> (shown by Google)
+        input.form-control(id='credit' type='text' name='creditLine' value=(undefined === pmdObj.creditLine ? '' : pmdObj.creditLine) )
+      div.form-group.col-md-7
+        label(for='webstatementofrights') <strong>Web Statement of Rights</strong> also: "Copyright Info URL" (shown by Google)
+        input.form-control(id='webstatementofrights' type='text' name='webstatementRights' value=(undefined === pmdObj.webstatementRights ? '' : pmdObj.webstatementRights) )
+        small.form-text.text-muted The URL must start with https:// or http://
+    div.mt-2.pt-1.mb-2.pb-1.pl-1.pr-1.formbox01
+      div.form-row
+        div.form-group.col-md-5
+          label(for='licensor1name') <strong>Licensor</strong>: Name
+          input.form-control(id='licensor1name' type='text' name='licensors_1_name' value=(undefined === pmdObj.licensors_1_name ? '' : pmdObj.licensors_1_name) )
+        div.form-group.col-md-7
+          label(for='licensor1id') Identifier
+          input.form-control(id='licensor1id' type='text' name='licensors_1_id' value=(undefined === pmdObj.licensors_1_id ? '' : pmdObj.licensors_1_id) )
+      div.form-group
+        label(for='licensor1url') Web URL also: "Licensor URL" (shown by Google)
+        input.form-control(id='licensor1url' type='text' name='licensors_1_url' value=(undefined === pmdObj.licensors_1_url ? '' : pmdObj.licensors_1_url) )
+        small.form-text.text-muted The URL must start with https:// or http://
+
+    hr
+    button#gensedatabtn.btn.btn-success.mt-1(type="submit" aria-pressed='true') Generate Photo Metadata

@@ -6,3 +6,17 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+.formbox01 {
+  background-color: bisque;
+}
+.formbox02 {
+  background-color: paleturquoise;
+}
+.formbox03 {
+  background-color: aquamarine;
+}
+.formbox04 {
+  background-color: pink;
+}
