@@ -3,16 +3,22 @@ extends layout
 block content
   h3.mt-3 Result after generating IPTC Photo Metadata
   p #{message}
-  h5 The generated ExifTool JSON object for embedding metadata into an image file
-  pre
-    code #{etObjStr}
+  h5 A photo metadata object for ExifTool was generated for embedding your metadata into image file(s)
+  button.btn.btn-link.mb-1(type="button" data-toggle="collapse" data-target="#etpmdobject" aria-expanded="false" aria-controls="etpmdobject") Show metadata object
+  div#etpmdobject.collapse
+    div.p-2.codebox
+      pre
+        code #{etObjStr}
+  div.mt-2 <a class="btn btn-success" role="button" href="/data/etjson/#{ipmdetfname}">Download this photo metadata object as myiptcpmd.json file</a> - to be <a href="/ui/howto" target="_blank">used with the tool package of this site</a>
 
-  h5 The generated Structured HTML Metadata for embedding into a web page
-  pre
-    code &lt;script type="application/ld+json"&gt;
-    br
-    code #{schemaorgObjStr}
-    br
-    code &lt;/script&gt;
+  h5.mt-4 The generated Structured HTML Metadata for embedding into a web page
+  div.p-2.codebox
+    pre
+      code &lt;script type="application/ld+json"&gt;
+      br
+      code #{schemaorgObjStr}
+      br
+      code &lt;/script&gt;
+  div.mt-2 You may copy and paste this code to the HTML of a web page showing this photo - inside the &lt;head&gt; element.
   hr
   a.btn.btn-primary.btn-lg.active(href='/' role='button' aria-pressed='true') Back to start

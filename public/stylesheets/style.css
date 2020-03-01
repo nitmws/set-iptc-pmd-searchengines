@@ -7,7 +7,11 @@ a {
   color: #00B7FF;
 }
 
-
+.codebox {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 .formbox01 {
   background-color: bisque;
 }
@@ -19,4 +23,19 @@ a {
 }
 .formbox04 {
   background-color: pink;
+}
+.lhg-12 {
+  line-height: 1.2em;
+}
+.lhg-13 {
+  line-height: 1.3em;
+}
+.lhg-14 {
+  line-height: 1.4em;
+}
+.lhg-15 {
+  line-height: 1.5em;
+}
+.displayedby {
+  color: #6f42c1;
 }

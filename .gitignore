@@ -110,3 +110,4 @@ _internal-doc
 *_pre*.*
 nittest*.html
 auxdata
+log/*.log

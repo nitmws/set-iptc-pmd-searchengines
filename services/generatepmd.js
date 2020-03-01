@@ -1,6 +1,15 @@
+const fs = require('fs');
+const path = require('path');
+const util1 = require('./utilities1');
+const appconfig = require('../config/appconfig');
+
 const {body, validationResult} = require('express-validator'); // /check
 const {sanitizeBody} = require('express-validator'); // /filter
 
+/**
+ * Processes a POST request after editing the photo metadata form
+ * @type {(function(...[*]=))[]}
+ */
 exports.pmd_edit_post = [
 
   // Validate fields.
@@ -26,18 +35,52 @@ exports.pmd_edit_post = [
       // no errors exist
       let currEtObj = transformFormobjToETobj(currPmdObj);
       let currEtObjStr = JSON.stringify(currEtObj, null, 2);
+      let iptcpmdAsETfn = util1.writeText2TempFileRandomname(currEtObjStr, "etpmd_", ".json");
       let currSoObj = transformFormobjToSchemaorgobj(currPmdObj);
       let currSoObjStr = JSON.stringify(currSoObj, null, 2);
 
-      let msg = "it worked ";
+      let msg = "It worked!";
 
       // write log
-      // util1.write2DataLog(edGuid + fv1.data.guidverSep + edVersion, "Nach Bearbeitung abgespeichert", "NV");
-      res.render('showresults1', {message: msg, pmdObj: currPmdObj, etObjStr: currEtObjStr, schemaorgObjStr: currSoObjStr});
+      util1.write2Log("IPTC PMD generated from form - in " + iptcpmdAsETfn);
+      res.render('showresults1', {message: msg, pmdObj: currPmdObj, etObjStr: currEtObjStr, schemaorgObjStr: currSoObjStr, ipmdetfname: iptcpmdAsETfn});
     }
   }
 ]
 
+/**
+ * Processes a GET request for photo metadata as ExifTool JSON data
+ * @param req
+ * @param res
+ */
+exports.pmd_get_etjson = function (req, res){
+  let filename = req.params.filename;
+  let filepath = path.join(appconfig.app.localFilecacheDir, filename);
+  let fileExists = true;
+  try {
+    if (fs.existsSync(filepath)) {
+    }
+  } catch(err) {
+    console.error(err)
+    fileExists = false;
+  }
+  if (fileExists){
+    util1.write2Log("IPTC PMD downloaded from " + filename);
+    const ipmdData = require(filepath);
+    res.setHeader('Content-disposition', 'attachment; filename=myiptcpmd.json');
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(ipmdData, null, 2));
+  }
+  else{
+    res.render('amessage1', {title: "Data not found", message: "Sorry, your cached IPTC Photo Metadata got lost, please fill in the form again."})
+  }
+}
+
+/**
+ * Transforms an object of data from the form to an ExifTool object
+ * @param formObj
+ * @returns {{}}
+ */
 function transformFormobjToETobj(formObj){
   let etObj = {}
   etObj.SourceFile = "*";
@@ -93,10 +136,14 @@ function transformFormobjToETobj(formObj){
     etObj["XMP-plus:Licensor"] = [];
     etObj["XMP-plus:Licensor"].push(licensor);
   }
-
   return etObj;
 }
 
+/**
+ * Transforms an object of data from the form to a JSON-LD/Schema.org object
+ * @param formObj
+ * @returns {{}}
+ */
 function transformFormobjToSchemaorgobj(formObj){
   let schemaorgObj = {};
   schemaorgObj["@context"] = "https://schema.org";

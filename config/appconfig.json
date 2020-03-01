@@ -1,0 +1,7 @@
+{
+  "app" : {
+    "localLogFpath" : "F:/SW_Devel/Projekte/NewsITpro/IPTC/PVMDtools/SetIptcPmd_ALL/set-iptc-pmd-searchengines/log/set-iptc-pmd-se.log",
+    "localFilecacheDir" : "F:/SW_Devel/Projekte/NewsITpro/IPTC/PVMDtools/SetIptcPmd_ALL/set-iptc-pmd-searchengines/auxdata/",
+    "logLevel" : 2
+  }
+}

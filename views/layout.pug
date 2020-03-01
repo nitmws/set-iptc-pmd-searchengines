@@ -6,7 +6,7 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='author' content='NewsIT-M.W.Steidl')
     meta(name='keywords' content='photo, metadata, IPTC')
-    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+    link(rel="stylesheet", href="/stylesheets/bootstrap.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
 
 
@@ -17,21 +17,21 @@ html
           img(src="/images/logo.jpg" alt="NewsIT")
         div.col-md-11
           h2 Set IPTC Photo Metadata for Search Engines - UNDER CONSTRUCTION
-      div.border.rounded
+      <!-- navigation bar -->
+      div.border.rounded.mb-3
         nav.nav
-          a.nav-link(href="/ui") Metadata form
-          a.nav-link(href="/howto") How To Use
-          a.nav-link(href="/about") About
-
-
-
+          a.nav-link(href="/ui") Start
+          a.nav-link(href="/ui/form") Metadata Form
+          a.nav-link(href="/ui/howto") How To Use
+          a.nav-link(href="/ui/about") About
 
       div
         block content
 
+      <!-- footer -->
       div.row
         block scriptsatend
           script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-          script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
+          script(src="/javascripts/bootstrap.min.js")
           script(src='/javascripts/spinner1.js')
 

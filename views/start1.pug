@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h5 You want to get your metadata displayed by search engines and your metadata editing software does not fully support that? - This site helps
+  a.btn.btn-success(href="/ui/form") I know this site - show the form
+  div.row.mt-3
+    div.col-8.lhg-13 Search engines have started to show specific metadata fields of photos in search results next to a thumbnail of the photo. The displayed metadata values can be read from <a href="https://iptc.org/standards/photo-metadata/photo-metadata/">IPTC photo metadata</a> embedded into the image file, how this is done exactly depends on the search engine. <br>But it is a prerequisite to embed such metadata fields into your image file!
+  div.row.mt-2
+    div.col-8.lhg-13 Unfortunately not all software used for editing IPTC photo metadata supports the required IPTC metadata fields. This site helps:
+  div.row
+    ul.col-8
+      li You can set the to-be-displayed fields in a form
+      li This site creates data which can be embedded into your photo(s)
+      li This site creates Structured HTML Metadata used for embedding in a web page
+  div.row
+    div.col-8.lhg-13 Find more information about embedding metadata into your photos on the <a href="/ui/howto">How To Use</a> page
+  h5.mt-3 Which Search Engines Displays What Currently
+  h6 Google Image Search
+  div.row
+    div.col-8.lhg-13 Google displays or plans to display currently the value of these five IPTC Photo Metadata fields:<br>- Creator<br>- Credit Line<br>- Copyright Notice<br>- Web Statement of Rights (also labelled as Copyright Info URL) - planned, will be shown later in spring 2020<br>- the URL field of a Licensor (called Licensor URL in many documents) - planned, will be shown later in spring 2020.<br><a href="https://iptc.org/standards/photo-metadata/quick-guide-to-iptc-photo-metadata-and-google-images/" target="_blank">Read more about it on the IPTC site</a> - with links to Google documents.<br>All these fields can be set by the <a href="/ui/form">form of this site</a>.
+  h6.mt-2 Bing
+  div.row
+    div.col-8.lhg-13 No embedded photo metadata is shown currently
+  h6.mt-2 Qwant
+  div.row
+    div.col-8.lhg-13 No embedded photo metadata is shown currently
