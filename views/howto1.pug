@@ -4,7 +4,7 @@ block content
   h4 How To Use this Site
   h6 This site enables you to embed photo metadata defined by you into a set of your photos
   div.row.mt-3
-    div.col-8.lhg-13 The overall workflow of embedding IPTC photo metadata created by this site is:
+    div.col-8.lhg-13 The <strong>overall workflow</strong> of embedding IPTC photo metadata created by this site is:
   div.row
     ol.col-8
       li.lhg-13 Basic setup of your computer: download a tool package from this site and install it, and install the program ExifTool. Both required once only!
@@ -14,19 +14,19 @@ block content
       li.lhg-13 Move the modified image files to another directory
   h5 Make use of this site - step by step
   div.row.mt-3
-    div.col-8.lhg-13 The steps below follow the overall workflow outlined above
+    div.col-8.lhg-13 The steps below refer to steps of the overall workflow outlined above
   div.row
     ul.col-8
       li.lhg-13 Re 1:<br>a) Create a directory in your file system for this purpose<br>b) <a href="/set-iptc-pmd-searchengines-tool.zip"><strong>Download the tool package</strong></a> named <code>set-iptc-pmd-searchengines-tool.zip</code> to this new directory.<br>c) Uncompress this zip file there. (Find below details about the content of this tool package)<br>d) Check if this directory has a sub-directory named <code>images</code>. If not: create a directory with this name
       li.lhg-13 Re 1: You may have to install the program ExifTool.<br>If you use a Windows computer this is not required, the ExifTool exe-file is included in the tool package.<br>If your computer uses Apple's MacOS or Linux as operating system you must install ExifTool. The <a href="https://exiftool.org/">ExifTool home page</a> provides a package for MacOS and Unix/Linux plus installation instructions for MacOS and Unix platforms (including Linux).
-      li.lhg-13 Re 2: Select a set of photos into which you want to embed your photo metadata and copy them to this <code>images</code> directory.
+      li.lhg-13 Re 2: Select a set of photos into which you want to embed your photo metadata and copy them to this <code>images</code> directory. Be aware: you may create subdirectories of the <code>images</code> directory, images in all these subdirectories will get the metadata embedded too!
       li.lhg-13 Re 3: Go to the Metadata Form of this site and type your values in the available fields. Finally click the Generate Photo Metadata button.
       li.lhg-13 Re 3: This takes you to a page showing the results. Check if "It worked" is shown below "Result after ...", then the generated data is ok. Below you see the section "The generated ExifTool JSON object .." and its code if you click on "Show metadata object". Below this code is a link "Download this IPTC Photo Metadata object ..." - click on it, the file <code>myiptcpmd.json</code> will be downloaded to a folder defined by your browser.
       li.lhg-13 Re 3: Copy or move the file <code>myiptcpmd.json</code> from your download directory to the directory where you had installed the tool package. There should be already a file with this name, overwrite it.
-      li.lhg-13 Re 4: Run the script for embedding the metadata in the directory of the installed tool package. It launches ExifTool as command line program and embeds the metadata of the <code>myiptcpmd.json</code> into all files in the <code>images</code> directory. (You should see notes about that on your screen.) How to run the script ...<br> ... on a Windows computer:  click on <code>embedIPTCpmd_windows.cmd</code><br> ... on a MacOS computer:  click on <code>embedIPTCpmd_macos.sh</code><br> ... on a Linux computer:  click on <code>embedIPTCpmd_linux.sh</code><br>Note for MacOS and Linux computers: you may have to enable the script to be executed by a <code>chmod +x embedIPTCpmd_macos.sh</code> or <code>chmod +x embedIPTCpmd_linux.sh</code> command.
+      li.lhg-13 Re 4: Run the script for embedding the metadata in the directory of the installed tool package. It launches ExifTool as command line program and embeds the metadata of the <code>myiptcpmd.json</code> into all files in the <code>images</code> directory and its subdirectories. (You should see notes about that on your screen.) How to run the script ...<br> ... on a Windows computer:  click on <code>embedIPTCpmd_windows.cmd</code><br> ... on a MacOS computer:  click on <code>embedIPTCpmd_macos.sh</code><br> ... on a Linux computer:  click on <code>embedIPTCpmd_linux.sh</code><br>Note for MacOS and Linux computers: you may have to enable the script to be executed by a <code>chmod +x embedIPTCpmd_macos.sh</code> or <code>chmod +x embedIPTCpmd_linux.sh</code> command.
       li.lhg-13 Re 4: You can check the embedded metadata by using the <a href="https://getpmd.iptc.org" target="_blank">Get IPTC Photo Metadata</a> site and select Option B (= uploading an image file). Select one of the photos in the <code>images</code> directory for uploading. And select "Metadata relevant for photos shown as result by search engines" for "What is shown". Clicking Get Photo Metadata of Local Image should show you metadata embedded into this image file. Check if the values are correct. If not: got back to the Metadata Form of this site, generate and download the metadata and embed it again.
       li.lhg-13 Re 5: Copy or move all the image files from the <code>images</code> directory to a directory where they are archived.
-      li.lhg-13 Re 4: After clearing the <code>images</code> directory you can select another set of your image files, copy it to the <code>images</code> directory folder and embed the same photo metadata as described above. <br>As long as your metadata displayed by search engines does not change you can reuse the metadata in the <code>myiptcpmd.json</code> file unlimited times!
+      li.lhg-13 Re 4: After clearing the <code>images</code> directory - don't forget images in subdirectories - you can select another set of your image files, copy it to the <code>images</code> directory folder and embed the same photo metadata as described above. <br>As long as your metadata displayed by search engines does not change you can reuse the metadata in the <code>myiptcpmd.json</code> file unlimited times!
   h5 The Tool Package Content
   div.row.mt-3
     div.col-8.lhg-13 The compressed <code>set-iptc-pmd-searchengines-tool.zip</code> file includes:
@@ -40,7 +40,7 @@ block content
       li.lhg-13 File <code>exiftool(-k).exe</code>: the ExifTool program file for Windows only!
       li.lhg-13 File <code>myiptcpmd.json</code>: the ExifTool data for embedding IPTC photo metadata into the image files in the <code>images</code>
   div.row.mt-3
-    div.col-8.lhg-13 <strong>To test the basic function of this toolset</strong> you may take these steps:
+    div.col-8.lhg-13 <strong>To test the basic function of this toolset</strong> you can take these steps:
   div.row
     ul.col-8
       li.lhg-13 Copy JPEG files from the <code>no-metadata-test-images</code> directory to the <code>images</code> directory.
