@@ -31,6 +31,6 @@ All the files of this tool-package reside in the /_tool-package directory of thi
  
 ----
 
-Developed by @nitmws
+Developed by [nitmws](https://github.com/nitmws)
 
 License: [MIT](LICENSE)
