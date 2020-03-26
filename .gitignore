@@ -107,6 +107,7 @@ dist
 .idea
 _internal-doc
 *.bak
+*.zip
 *_pre*.*
 nittest*.html
 auxdata

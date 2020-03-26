@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  form(id="amdform1" class="mt-2" method='POST' action="/data/gensedata" onsubmit='return startSpinner1("#gensedatabtn");')
+  form(id="pmdform1" class="mt-2" method='POST' action="/data/gensedata" onsubmit='return startSpinner1("#gensedatabtn");')
     p This form supports editing metadata fields displayed by search engines. Which one displays what is indicated by "displayed by ... . As more details than the displayed about the Creator or the Licensor can be embedded additional fields of a person or party are provided too.
     p Be aware: Metadata set on this form are either added to the existing photo metadata of an image file, or the value of a set field may overwrite an existing value of this field in the already embedded metadata. Fields of this form which are left empty will not be added or will not overwrite existing values.
     div.mt-2.mb-2.pt-1.pb-1.pl-1.pr-1.formbox02

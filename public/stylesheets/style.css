@@ -24,6 +24,14 @@ a {
 .formbox04 {
   background-color: pink;
 }
+.showbox01 {
+  background-color: beige;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.sitecibox{
+  background-color: #faebcc;
+}
 .lhg-12 {
   line-height: 1.2em;
 }
