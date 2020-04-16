@@ -1,11 +1,12 @@
 {
   "name": "set-iptc-pmd-searchengines",
-  "version": "0.2.0",
-  "description": "App for editing IPTC Photo Metadata fields which are highly relevant for search engines",
+  "version": "0.2.1",
+  "description": "App for editing IPTC Photo Metadata fields which are used by search engines",
   "keyords": [
     "IPTC",
     "metadata",
-    "photo"
+    "photo",
+    "search engine"
   ],
   "license": "MIT",
   "author": {
