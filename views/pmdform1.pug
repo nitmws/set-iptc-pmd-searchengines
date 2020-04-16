@@ -3,7 +3,7 @@ extends layout
 block content
   form(id="pmdform1" class="mt-2" method='POST' action="/data/gensedata" onsubmit='return startSpinner1("#gensedatabtn");')
     p This form supports editing metadata fields displayed by search engines. If a field is displayed by a search engine is indicated by a "displayed by ... next to the field name. <br>As more fields of a Creator or Licensor person than only the ones with a "displayed by ..." are relevant all fields defined by IPTC are available. We suggest using them as a best practice.
-    p <span class="bgyellow1">Warning:</span> You should only fill out the fields below if you want the result to appear in the photo metadata of the images you process. If the images you plan to add this information to already contain photo metadata, all other fields than the ones below will be preserved definitely. If you leave a field empty below, no changes will be made to that field too. Any data you enter in a field will overwrite the value already in the corresponding field in the image file.
+    p <span class="bgyellow1">Warning:</span> You should only fill out the fields below if you want the result to appear in the photo metadata of the images you process. If the images you plan to add this information to already contain photo metadata, all other fields than the ones below will be preserved. If you leave a field empty below, it will be preserved as it is. Any data you enter in a field will overwrite the value already in the corresponding field in the image file.
     div.mt-2.mb-2.pt-1.pb-1.pl-1.pr-1.formbox02
       div.form-row
         div.form-group.col-md-5
