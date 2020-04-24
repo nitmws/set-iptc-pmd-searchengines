@@ -1,10 +1,17 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+a.googlink {
+  color: #6f42c1;
 }
 
 .codebox {
@@ -44,7 +51,7 @@ a {
 .lhg-15 {
   line-height: 1.5em;
 }
-.displayedby {
+.displayedbygoogle {
   color: #6f42c1;
 }
 .bggreen1 {
