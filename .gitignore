@@ -106,9 +106,11 @@ dist
 # NIT project specific
 .idea
 _internal-doc
+_tool-package
 *.bak
 *.zip
 *_pre*.*
 nittest*.html
 auxdata
 log/*.log
+_tool-package/_archive
