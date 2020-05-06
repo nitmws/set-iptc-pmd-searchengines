@@ -1,6 +1,6 @@
 {
   "name": "set-iptc-pmd-searchengines",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "App for editing IPTC Photo Metadata fields which are used by search engines",
   "keyords": [
     "IPTC",
