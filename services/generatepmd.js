@@ -102,6 +102,39 @@ function transformFormobjToETobj(formObj){
     etObj["XMP-plus:ImageCreator"] = [];
     etObj["XMP-plus:ImageCreator"].push(imgCreator);
   }
+  let imgCreatorContactUsed = false;
+  let imgCreatorContact = {};
+  if (formObj.creatorAddr){
+    imgCreatorContact["CiAdrExtadr"] = formObj.creatorAddr;
+    imgCreatorContactUsed = true;
+  }
+  if (formObj.creatorCity){
+    imgCreatorContact["CiAdrCity"] = formObj.creatorCity;
+    imgCreatorContactUsed = true;
+  }
+  if (formObj.creatorPostalcode){
+    imgCreatorContact["CiAdrPcode"] = formObj.creatorPostalcode;
+    imgCreatorContactUsed = true;
+  }
+  if (formObj.creatorStateProvince){
+    imgCreatorContact["CiAdrRegion"] = formObj.creatorStateProvince;
+    imgCreatorContactUsed = true;
+  }
+  if (formObj.creatorCountry){
+    imgCreatorContact["CiAdrCtry"] = formObj.creatorCountry;
+    imgCreatorContactUsed = true;
+  }
+  if (formObj.creatorEmail){
+    imgCreatorContact["CiEmailWork"] = formObj.creatorEmail;
+    imgCreatorContactUsed = true;
+  }
+  if (formObj.creatorUrl){
+    imgCreatorContact["CiUrlWork"] = formObj.creatorUrl;
+    imgCreatorContactUsed = true;
+  }
+  if (imgCreatorContactUsed){
+    etObj["XMP-iptcCore:CreatorContactInfo"] = imgCreatorContact;
+  }
   if (formObj.creatorJobtitle){
     etObj["IPTC:By-lineTitle"] = formObj.creatorJobtitle;
     etObj["XMP-photoshop:AuthorsPosition"] = formObj.creatorJobtitle;

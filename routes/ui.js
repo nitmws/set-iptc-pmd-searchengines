@@ -8,7 +8,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/form', function(req, res, next) {
   let pmdObj = {};
-  pmdObj.creatorName = "Jane Doe";
   res.render('pmdform1', { pmdObj: pmdObj });
 });
 
