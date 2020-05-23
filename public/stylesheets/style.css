@@ -9,9 +9,12 @@ h1, h2, h3, h4, h5 {
 a {
   color: #00B7FF;
 }
-
 a.googlink {
   color: #6f42c1;
+}
+
+.note1{
+  font-size: small;
 }
 
 .codebox {
@@ -39,6 +42,10 @@ a.googlink {
 .sitecibox{
   background-color: #faebcc;
 }
+.footerbox{
+  background-color: #dddddd;
+}
+
 .lhg-12 {
   line-height: 1.2em;
 }
